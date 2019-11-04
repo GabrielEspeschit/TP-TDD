@@ -4,7 +4,7 @@ class Money {
     public int amount;
     private String currency;
 
-    static Money dollar(int amount)  {
+    static Money dollar(int amount) {
         return new Dollar(amount, "USD");
     }
 
@@ -28,16 +28,6 @@ class Money {
 
     Money times(int multiplier) {
         return new Money(amount * multiplier, currency);
-    }
-
-    public void testDifferentClassEquality() {
-        Assert.assertTrue(new Money(10, "CHF").equals(new Franc(10, "CHF")));
-    }
-
-    public void testEquality() {
-        Assert.assertTrue(Money.dollar(5).equals(Money.dollar(5)));
-        Assert.assertFalse(Money.dollar(5).equals(Money.dollar(6)));
-        Assert.assertFalse(Money.franc(5).equals(Money.dollar(5)));
     }
 }
 
