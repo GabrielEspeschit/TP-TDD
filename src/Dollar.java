@@ -26,22 +26,20 @@ public class Dollar {
         Dollar dollar = (Dollar) object;
         return amount == dollar.amount;
     }
+}
 
-    class Franc {
-        private int amount;
 
-        Franc(int amount) {
-            this.amount = amount;
-        }
-
-        Franc times(int multiplier) {
-            return new Franc(amount * multiplier);
-        }
-
-        public boolean equals(Object object) {
-            Franc franc = (Franc) object;
-            return amount == franc.amount;
-        }
+class Franc {
+    private int amount;
+    Franc(int amount) {
+        this.amount= amount;
+    }
+    Franc times(int multiplier)  {
+        return new Franc(amount * multiplier);
+    }
+    public boolean equals(Object object) {
+        Franc franc = (Franc) object;
+        return amount == franc.amount;
     }
 
     public void testFrancMultiplication() {
@@ -49,14 +47,14 @@ public class Dollar {
         Assert.assertEquals(new Franc(10), five.times(2));
         Assert.assertEquals(new Franc(15), five.times(3));
     }
+}
 
-    class Money  {
-        protected int amount;
+class Money {
+    protected int amount;
 
-        public boolean equals(Object object)  {
-            Money money = (Money) object;
-            return amount == money.amount;
-        }
+    public boolean equals(Object object) {
+        Money money = (Money) object;
+        return amount == money.amount;
     }
 
     public void testEquality() {
